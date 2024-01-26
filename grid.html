@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: grid;
+
+        /* Create 200px three columns  */
+
+        /* grid-template-columns: 200px 200px 200px; */
+
+        /* Similarly we can create rows */
+
+        /* grid-template-rows: 200px 100px 200px; */
+
+        /* use of unit fr (fraction) if will produce same size of below like three column structure*/
+
+        /* grid-template-columns: 1fr 1fr 1fr; */
+
+        /* grid-template-columns: 1fr 2fr 1fr; */
+
+        /* to repeat the cols repeat can be used like below */
+        /* grid-template-columns: repeat(2, 1fr); */
+
+        /* below code will auto fill the width available for columns  below code will add to responsiveness
+        we can check the screen by expanding or reducing */
+
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+        /* to give gap between the cols use grid-gap */
+
+        grid-gap: 20px;
+
+        /* to maintain specific or min and max width height or row / columns */
+
+        /* grid-auto-rows: 100px; */
+        /* grid-auto-columns: 50px; */
+
+        grid-auto-rows: minmax(100px, auto);
+        grid-auto-columns: minmax(100px, auto);
+      }
+      .childelement {
+        background-color: aquamarine;
+        border: 2px gray solid;
+      }
+
+      #item2 {
+        grid-row-start: 3;
+        grid-row-end: 3;
+        grid-column-start: 3;
+        grid-column-end: 4;
+      }
+
+      /* to expand one column */
+
+      #item1 {
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+
+      .subchildelement {
+        display: grid;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="childelement" id="item1">Item 1</div>
+      <div class="childelement" id="item2">Item 2</div>
+      <div class="childelement subchildelement">
+        <div class="subitem">Subitem 1</div>
+        <div class="subitem">Subitem 2</div>
+        <div class="subitem">Subitem 3</div>
+        <div class="subitem">Subitem 4</div>
+      </div>
+      <div class="childelement">Item 4</div>
+      <div class="childelement">Item 5</div>
+      <div class="childelement">Item 6</div>
+      <div class="childelement">Item 7</div>
+    </div>
+  </body>
+</html>
